@@ -1,10 +1,9 @@
-name: Docker Image CI
+name: ci
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - "main"
 
 jobs:
   build:
@@ -29,4 +28,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ics-view:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/docker-ics-view:latest
